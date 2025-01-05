@@ -1,0 +1,98 @@
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    min-height: 70vh;
+
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fileInput {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submitButton:hover {
+    background: #0056b3;
+  }
+  
+  .modalContent {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .modalScore {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .errorList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .errorItem {
+    color: #d9534f;
+    margin-bottom: 10px;
+  }
+  
+  .successMessage {
+    color: #5cb85c;
+  }
+  
+  .closeButton {
+    padding: 10px 20px;
+    background: #d9534f;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .warningText {
+    font-size: 0.9rem;
+    color: #d9534f;
+    margin-top: 15px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 500px;
+  }
+  

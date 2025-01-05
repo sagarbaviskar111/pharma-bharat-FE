@@ -1,0 +1,92 @@
+.aboutContainer {
+    padding: 20px;
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    min-height: 80vh;
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05); /* Stronger shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+  }
+  
+  .aboutContainer:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Darker color for the title */
+  }
+  
+  .content {
+    margin: 20px 0;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    color: #27ae60; /* Green shade */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .content p {
+    line-height: 1.6;
+    color: #34495e; /* Dark grey for better readability */
+  }
+  
+  .footer {
+    border-top: 1px solid #eaeaea;
+    padding-top: 10px;
+    background-color: #eaeaea;
+  }
+  
+  .footer h3 {
+    font-size: 1.5rem;
+    color: #2c3e50; /* Darker color for the footer */
+  }
+  
+  .contactLinks {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .contactLink {
+    display: flex;
+    align-items: center;
+    color: #27ae60; /* Green color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .contactLink svg {
+    margin-right: 5px;
+    /* fill: #27ae60; Match icon color to theme */
+  }
+  
+  .contactLink:hover {
+    color: #1e6f4c; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s; /* Smooth scaling effect */
+  }
+  
+  @media (max-width: 768px) {
+    .aboutContainer {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .header h1 {
+      font-size: 2rem; /* Responsive title size */
+    }
+  
+    .content h2 {
+      font-size: 1.5rem; /* Responsive subtitle size */
+    }
+  }
+  

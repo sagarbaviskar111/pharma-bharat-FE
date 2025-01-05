@@ -1,0 +1,188 @@
+/* jobDetails.module.css */
+
+/* General Layout */
+.jobCard {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.jobHeader {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.authorPhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: contain; /* Ensure the entire logo fits within the bounds */
+  max-width: 100%;
+  max-height: 100%;
+  margin-right: 20px;
+  padding: 1px; /* Adds a little padding around the logo */
+  border: 0.3px solid #f0f0f0;
+  background-color: #f9f9f9;
+}
+
+.jobDetails h1 {
+  font-size: 1.8rem;
+  margin: 0 0 10px;
+  color: #24b08a;
+}
+
+.jobDetails p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.jobDetails strong {
+  color: #04760a;
+}
+
+/* Job Description Section */
+.jobDescription {
+  padding: 20px 0;
+}
+
+.jobDescription h2 {
+  margin: 20px 0 10px;
+  font-size: 1.3rem;
+  color: #2b7a78;
+  border-bottom: 2px solid #2b7a78;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Responsibilities and Skills Lists */
+.jobDescription ul {
+  list-style: none;
+  padding: 0;
+}
+
+.jobDescription ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #444;
+  font-size: 0.95rem;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.jobDescription ul li::before {
+  content: '✔';
+  color: #2b7a78;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Company Overview */
+.jobDescription .companyOverview {
+  background: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.jobDescription .companyOverview h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.jobDescription .companyOverview p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tags Section */
+.jobDescription .tags {
+  background: #e8f7f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.jobDescription .tags span {
+  background: #2b7a78;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Footer Section */
+.jobFooter {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.jobFooter h2 {
+  margin: 0 0 15px;
+  font-size: 1.2rem;
+  color: #2b7a78;
+}
+
+.applicationLinks a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #2b7a78;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.applicationLinks a:hover {
+  background: #205f5a;
+}
+
+/* Conditional Fields */
+.jobDetails p:empty,
+.jobDescription ul:empty,
+.jobFooter h2:empty,
+.applicationLinks:empty,
+.jobDescription .tags:empty {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .jobHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .authorPhoto {
+    margin-bottom: 10px;
+  }
+
+  .jobDetails h1 {
+    font-size: 1.4rem;
+  }
+
+  .applicationLinks a {
+    width: 100%;
+    text-align: center;
+  }
+}

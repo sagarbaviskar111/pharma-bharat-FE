@@ -1,0 +1,69 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #ffffff; /* White background */
+  }
+  
+  .contactCard {
+    width: 400px; /* Increased width for a larger card */
+    padding: 30px; /* Slightly more padding */
+    background: linear-gradient(145deg, #2a2a2a, #3a3a3a); /* Dark theme gradient */
+    border-radius: 20px; /* Increased border radius for a softer look */
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4), -7px -7px 20px rgba(60, 60, 60, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transform: perspective(800px) rotateY(0deg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .contactCard:hover {
+    transform: perspective(800px) rotateY(-5deg);
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.5), -12px -12px 30px rgba(60, 60, 60, 1);
+  }
+  
+  .cardContent h2 {
+    font-size: 24px; /* Larger font size for title */
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .contactDetails {
+    margin: 20px 0;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #b3b3b3;
+    font-size: 16px; /* Slightly larger font size */
+  }
+  
+  .contactItem i {
+    font-size: 18px; /* Slightly larger icon size */
+    margin-right: 12px;
+    color: #4caf50; /* Green icon color */
+  }
+  
+  .contactButton {
+    background: linear-gradient(145deg, #4caf50, #66bb6a);
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Increased padding for a larger button */
+    font-size: 16px;
+    border-radius: 25px; /* Increased border radius for button */
+    cursor: pointer;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(60, 60, 60, 1);
+    transition: all 0.3s ease;
+  }
+  
+  .contactButton:hover {
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.4), -12px -12px 30px rgba(60, 60, 60, 1);
+    background: linear-gradient(145deg, #66bb6a, #4caf50);
+  }
+  
