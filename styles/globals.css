@@ -1,0 +1,46 @@
+/* styles/globals.css or styles for your layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure full height of the viewport */
+}
+
+main {
+  flex-grow: 1; /* This ensures the main content takes up the remaining space */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.ad-banner {
+  text-align: center;
+  margin: 20px 0;
+}

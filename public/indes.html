@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founders Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .founders-container {
+            display: flex;
+            gap: 20px;
+        }
+        .founder-card {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 15px;
+            box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 0.5s, box-shadow 0.3s;
+        }
+        .founder-card:hover {
+            transform: perspective(1000px) rotateY(10deg);
+            box-shadow: 10px 10px 30px #b8b8b8, -10px -10px 30px #ffffff;
+        }
+        .founder-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .founder-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .founder-designation {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="founders-container">
+        <div class="founder-card">
+            <div class="founder-image">
+                <img src="founder1.jpg" alt="Founder 1">
+            </div>
+            <div class="founder-name">John Doe</div>
+            <div class="founder-designation">CEO & Co-Founder</div>
+        </div>
+
+        <div class="founder-card">
+            <div class="founder-image">
+                <img src="founder2.jpg" alt="Founder 2">
+            </div>
+            <div class="founder-name">Jane Smith</div>
+            <div class="founder-designation">CTO & Co-Founder</div>
+        </div>
+
+        <div class="founder-card">
+            <div class="founder-image">
+                <img src="founder3.jpg" alt="Founder 3">
+            </div>
+            <div class="founder-name">Emily Johnson</div>
+            <div class="founder-designation">COO & Co-Founder</div>
+        </div>
+    </div>
+</body>
+</html>

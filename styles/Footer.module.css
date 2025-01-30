@@ -1,0 +1,65 @@
+/* components/Footer.module.css */
+.footer {
+    background-color: #282c34;
+    color: #fff;
+    padding: 1.5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .text {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .socialLinks {
+    margin-top: 1rem;
+  }
+  
+  .socialIcon {
+    color: #61dafb;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcon:hover {
+    color: #21a0f6;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 1rem;
+    }
+    
+    .text {
+      font-size: 0.9rem;
+    }
+    
+    .socialIcon {
+      font-size: 1rem;
+    }
+  }
+  
