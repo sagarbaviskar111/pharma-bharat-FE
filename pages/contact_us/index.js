@@ -36,7 +36,7 @@ export default function Contact() {
             <div className={styles.contactDetails}>
               <div className={styles.contactItem}>
                 <i className="fas fa-phone-alt"></i>
-                <span>+91 9370472071</span> {/* Updated phone number */}
+                <span>+91 8999213129</span> {/* Updated phone number */}
               </div>
               <div className={styles.contactItem}>
                 <i className="fas fa-envelope"></i>

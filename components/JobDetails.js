@@ -118,26 +118,25 @@
 // };
 
 // export default JobDeatils;
-
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/jobDetails.module.css';
 import CONFIG from '../config';
 import Image from 'next/image';
+import clinidia from './clinidia.jpeg'
 
-const API_URL = CONFIG.BACKEND_URL || 'http://localhost:3000'; // Fallback for API URL
+const API_URL = CONFIG.BACKEND_URL || 'http://localhost:3000';
 
 const JobDetails = ({ job }) => {
   const [latestJobs, setLatestJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const departmentId = job?.department; // Extract departmentId from job prop
+  const departmentId = job?.department;
 
-  // Fetch the latest jobs
   useEffect(() => {
     const fetchLatestJobs = async () => {
       setLoading(true);
       try {
-        const limit = 5; // Limit number of jobs
+        const limit = 5;
         let apiUrl = `${API_URL}/api/jobs?limit=${limit}`;
 
         if (departmentId) {
@@ -148,7 +147,7 @@ const JobDetails = ({ job }) => {
         const data = await response.json();
 
         if (data?.jobs) {
-          setLatestJobs(data.jobs); // Set the latest jobs
+          setLatestJobs(data.jobs);
         }
       } catch (error) {
         console.error('Error fetching latest jobs:', error);
@@ -158,11 +157,10 @@ const JobDetails = ({ job }) => {
     };
 
     if (departmentId) {
-      fetchLatestJobs(); // Only fetch if departmentId exists
+      fetchLatestJobs();
     }
   }, [departmentId]);
 
-  // Handle Google AdSense
   useEffect(() => {
     if (typeof window !== 'undefined' && window.adsbygoogle) {
       try {
@@ -180,49 +178,55 @@ const JobDetails = ({ job }) => {
   return (
     <div className={styles.jobCard}>
       <div className={styles.jobHeader}>
-        <Image
+        {/* <Image
           src={job.logo || '/placeholder-logo.png'}
           alt={job.company || 'Company Logo'}
           className={styles.authorPhoto}
-          width={500}
-          height={500}
-        />
+          width={100}
+          height={100}
+        /> */}
 
         <div className={styles.jobDetails}>
-          <h1>
-            {job.company} Hiring For {job.positionName}
-          </h1>
-          <p>
-            <strong>Position Name:</strong> {job.positionName}
-          </p>
-          <p>
-            <strong>Organization:</strong> {job.company}
-          </p>
-          <p>
-            <strong>Qualification:</strong> {job.qualification}
-          </p>
-          <p>
-            <strong>Experience:</strong> {job.experience}
-          </p>
-          <p>
-            <strong>Salary:</strong> {job.salary}
-          </p>
-          <p>
-            <strong>Location:</strong> {job.location}
-          </p>
-          {job.email && (
-            <p>
-              <strong>Email:</strong> {job.email}
-            </p>
-          )}
+          <h1>{job.company} Hiring For {job.positionName}</h1>
+          <p><strong>Position Name:</strong> {job.positionName}</p>
+          <p><strong>Organization:</strong> {job.company}</p>
+          <p><strong>Qualification:</strong> {job.qualification}</p>
+          <p><strong>Experience:</strong> {job.experience}</p>
+          <p><strong>Salary:</strong> {job.salary}</p>
+          <p><strong>Location:</strong> {job.location}</p>
+          {job.email && <p><strong>Email:</strong> {job.email}</p>}
         </div>
+      </div>
+
+      {/* Job Image Section */}
+
+
+      {job.driveLocation && (
+        <div className={styles.jobDetails}>
+          <h2>Drive Details</h2>
+          <p><strong>Drive Location:</strong> {job.driveLocation}</p>
+          {job.driveDate && <p><strong>Drive Date:</strong> {job.driveDate}</p>}
+          {job.driveTime && <p><strong>Drive Time:</strong> {job.driveTime}</p>}
+          {job.driveContactPerson && <p><strong>Contact Person:</strong> {job.driveContactPerson}</p>}
+          {job.driveContactNumber && <p><strong>Contact Number:</strong> {job.driveContactNumber}</p>}
+        </div>
+      )}
+
+      <div className={styles.jobImageContainer}>
+        <Image
+          src={clinidia}
+          alt="Job Visual"
+          className={styles.jobImage}
+          width={600}
+          height={400}
+        />
       </div>
 
       <div className={styles.jobDescription}>
         {job?.responsibilities?.length > 0 && <h2>Responsibilities</h2>}
         <ul>
-          {job?.responsibilities?.map((responsibility, index) => (
-            <li key={index}>{responsibility}</li>
+          {job?.responsibilities?.map((res, index) => (
+            <li key={index}>{res}</li>
           ))}
         </ul>
 
@@ -232,12 +236,12 @@ const JobDetails = ({ job }) => {
             <li key={index}>{skill}</li>
           ))}
         </ul>
+
         <h2>Company Overview</h2>
         <p>{job.companyOverview || 'Details not available.'}</p>
         <p>{job.tags}</p>
       </div>
 
-      {/* Google Ad */}
       <div>
         <ins
           className="adsbygoogle"
@@ -252,7 +256,7 @@ const JobDetails = ({ job }) => {
       <div className={styles.jobFooter}>
         <h2>Apply For Job</h2>
         <div className={styles.applicationLinks}>
-          <a href={job?.applylink} target="_blank" rel="noopener noreferrer">
+          <a href={job?.applylink} target="_blank" rel="noopener noreferrer" className={styles.applyButton}>
             Apply Here
           </a>
         </div>

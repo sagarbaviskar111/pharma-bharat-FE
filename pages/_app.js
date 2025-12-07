@@ -10,7 +10,9 @@ function MyApp({ Component, pageProps }) {
       <link rel="icon" type="image/png" href='/favicon.png' />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-
+      <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"

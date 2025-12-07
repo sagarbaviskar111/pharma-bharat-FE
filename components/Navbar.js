@@ -77,6 +77,9 @@ const Navbar = ({ onHomeClick }) => {
             </ul>
           </li>
         )}
+         <li>
+          <a href="/industry_insights">🏭 Industry Insights</a>
+        </li>
         <li>
           <a href="/mission_vision">📃 Mission & Vision</a>
         </li>

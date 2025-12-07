@@ -1,0 +1,149 @@
+/* Global Container */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+  }
+  
+  /* Main News Card */
+  .card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Title */
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Author & Date */
+  .meta {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+  
+  /* News Image */
+  .image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* News Content */
+  .text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+  }
+  
+  /* Google Ad Slot */
+  .adSlot {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background: #f7f7f7;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .pageButton {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .pageButton:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.1);
+  }
+  
+  /* Suggested News Section */
+  .relatedArticles {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+  }
+  
+  .relatedTitle {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;
+    text-transform: uppercase;
+  }
+  
+  .relatedGrid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .relatedCard {
+    flex: 0 0 240px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+  }
+  
+  .relatedCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .relatedImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .relatedText {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
