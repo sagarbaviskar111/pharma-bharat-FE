@@ -127,6 +127,44 @@ export default function Home() {
           </button>
         </div>
 
+        {/* Hero Section with SEO Content */}
+        <section className={styles.heroSection}>
+          <div className={styles.heroContainer}>
+            <h1 className={styles.heroH1}>
+              Find Latest Pharma Jobs in India | #1 Pharmaceutical Job Portal
+            </h1>
+            <p className={styles.heroDescription}>
+              Discover your dream career in the pharmaceutical industry with <strong>Pharma Talent Hub</strong>,
+              India's leading job portal for pharmacy professionals. We connect talented individuals with top
+              pharmaceutical companies across India, offering opportunities in <a href="/?departmentId=qa" className={styles.inlineLink}>Quality Assurance</a>,
+              <a href="/?departmentId=qc" className={styles.inlineLink}> Quality Control</a>,
+              <a href="/?departmentId=production" className={styles.inlineLink}> Production</a>,
+              <a href="/?departmentId=rd" className={styles.inlineLink}> R&D</a>, and
+              <a href="/?departmentId=regulatory" className={styles.inlineLink}> Regulatory Affairs</a>.
+            </p>
+            <p className={styles.heroDescription}>
+              Whether you're a <strong>fresher</strong> looking for your first pharma job or an experienced professional
+              seeking career advancement, our platform features verified job listings from leading pharmaceutical companies
+              in major cities including Pune, Hyderabad, Mumbai, Bangalore, and Ahmedabad. Get expert career guidance,
+              apply to multiple positions, and take the next step in your pharmaceutical career today!
+            </p>
+            <div className={styles.heroStats}>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>100+</span>
+                <span className={styles.statLabel}>Successful Placements</span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>500+</span>
+                <span className={styles.statLabel}>Active Job Listings</span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>50+</span>
+                <span className={styles.statLabel}>Top Companies</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Top Ad Unit */}
         <AdUnit slot="1234567890" format="auto" layout="in-article" align="center" />
 
@@ -166,26 +204,27 @@ export default function Home() {
         {/* SEO Content Section */}
         <section className={styles.seoContent}>
           <div className={styles.seoContainer}>
-            <h1 className={styles.seoH1}>Find Your Dream Pharma Job in India - Pharma Talent Hub</h1>
-
             <div className={styles.seoText}>
-              <h2>Leading Pharmaceutical Job Portal in India</h2>
+              <h2 className={styles.seoH2}>Leading Pharmaceutical Job Portal in India</h2>
               <p>
                 Pharma Talent Hub is India's premier job portal dedicated exclusively to pharmaceutical and healthcare professionals.
                 Whether you're a fresher looking for your first opportunity or an experienced professional seeking career advancement,
                 we connect you with top pharmaceutical companies across India.
               </p>
 
-              <h2>Wide Range of Pharma Job Opportunities</h2>
+              <h2 className={styles.seoH2}>Wide Range of Pharma Job Categories</h2>
               <p>
-                Explore diverse career opportunities in <strong>Quality Assurance (QA)</strong>, <strong>Quality Control (QC)</strong>,
-                <strong> Production</strong>, <strong>Research & Development (R&D)</strong>, <strong>Regulatory Affairs</strong>,
+                Explore diverse career opportunities in <a href="/?departmentId=qa" className={styles.categoryLink}><strong>Quality Assurance (QA)</strong></a>,
+                <a href="/?departmentId=qc" className={styles.categoryLink}> <strong>Quality Control (QC)</strong></a>,
+                <a href="/?departmentId=production" className={styles.categoryLink}> <strong>Production</strong></a>,
+                <a href="/?departmentId=rd" className={styles.categoryLink}> <strong>Research & Development (R&D)</strong></a>,
+                <a href="/?departmentId=regulatory" className={styles.categoryLink}> <strong>Regulatory Affairs</strong></a>,
                 <strong> Clinical Research</strong>, <strong>Pharmacovigilance</strong>, <strong>Medical Coding</strong>,
                 <strong> Pharmaceutical Sales</strong>, and <strong>Marketing</strong>. We feature positions from leading
                 pharmaceutical companies including Sun Pharma, Cipla, Dr. Reddy's, Lupin, Biocon, and many more.
               </p>
 
-              <h2>Pharma Jobs Across Major Indian Cities</h2>
+              <h2 className={styles.seoH2}>Pharma Jobs Across Major Indian Cities</h2>
               <p>
                 Find pharmaceutical job opportunities in major pharma hubs: <strong>Pune</strong>, <strong>Hyderabad</strong>,
                 <strong> Mumbai</strong>, <strong>Ahmedabad</strong>, <strong>Bangalore</strong>, <strong>Baddi</strong>,
