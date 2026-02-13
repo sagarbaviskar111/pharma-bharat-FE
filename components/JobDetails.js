@@ -167,10 +167,11 @@ const JobDetails = ({ job }) => {
       <div className={styles.jobHeader}>
         <Image
           src={`${job.logo}`}
-          alt={job.company}
+          alt={`${job.company} logo - ${job.positionName} job opening in ${job.location} - Pharma Talent Hub`}
           className={styles.authorPhoto}
           width={500}
           height={500}
+          priority
         />
 
         <div className={styles.jobDetails}>

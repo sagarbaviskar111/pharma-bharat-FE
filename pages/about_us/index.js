@@ -1,59 +1,60 @@
 // pages/about.js
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
-// import Navbar from '../../components/Navbar';
 const Navbar = dynamic(() => import('../../components/Navbar'));
-// import Footer from '../../components/Footer';
 const Footer = dynamic(() => import('../../components/Footer'));
 import styles from './About.module.css';
+import { SEO, OrganizationSchema } from '../../components/SEO';
 
 const About = () => {
   return (
     <div>
-    {/* <Head>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        />
-    </Head> */}
-    <Navbar />
-    <div className={styles.aboutContainer}>
-      <header className={styles.header}>
-        {/* <Image src={logo} alt="Pharma Talent Hub" width={150} height={50} /> */}
-        <h1>About Us</h1>
-      </header>
+      <SEO
+        title="About Pharma Talent Hub - Leading Pharma Job Portal in India"
+        description="Pharma Talent Hub connects pharmacy students and professionals with top pharmaceutical companies across India. Successfully placed 100+ candidates. Expert HR team dedicated to your pharma career growth."
+        canonical="https://pharmatalenthub.in/about_us"
+        keywords="pharma talent hub, pharmaceutical job portal, pharmacy career, pharma recruitment, healthcare jobs India, pharma HR services, pharmacy student jobs"
+      />
 
-      <section className={styles.content}>
-        <h2>Welcome to Pharma Talent Hub</h2>
-        <p>
-          We are dedicated to helping pharmacy students find their dream jobs in the industry.
-          With a strong commitment to connecting students with top employers, we have successfully placed over 100 students so far!
-        </p>
-        <p>
-          Our expert HR team works tirelessly to ensure that you get the best opportunities tailored to your skills and aspirations.
-          Join us in your journey to a fulfilling career in pharmacy and healthcare!
-        </p>
-      </section>
+      <OrganizationSchema />
 
-      <footer className={styles.footer}>
-        <h3>Contact Us</h3>
-        <div className={styles.contactLinks}>
-          <a href="mailto:avinashrohankar123@gmail.com" className={styles.contactLink}>
-            <EmailLogo /> Email Us
-          </a>
-          <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-            <LinkedInLogo /> LinkedIn
-          </a>
-          <a href="https://t.me/PharmaTalentHubCareer" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-            <TelegramLogo /> Telegram
-          </a>
-          <a href="https://whatsapp.com/channel/0029VaxIS2WGZNCt64tx5b3F" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-         <WhatsAppLogo/> Whatsapp
-          </a>
-        </div>
-      </footer>
-    </div>
-    <Footer />
+      <Navbar />
+      <div className={styles.aboutContainer}>
+        <header className={styles.header}>
+          {/* <Image src={logo} alt="Pharma Talent Hub" width={150} height={50} /> */}
+          <h1>About Pharma Talent Hub - India's Leading Pharma Job Portal</h1>
+        </header>
+
+        <section className={styles.content}>
+          <h2>Welcome to Pharma Talent Hub</h2>
+          <p>
+            We are dedicated to helping pharmacy students find their dream jobs in the industry.
+            With a strong commitment to connecting students with top employers, we have successfully placed over 100 students so far!
+          </p>
+          <p>
+            Our expert HR team works tirelessly to ensure that you get the best opportunities tailored to your skills and aspirations.
+            Join us in your journey to a fulfilling career in pharmacy and healthcare!
+          </p>
+        </section>
+
+        <footer className={styles.footer}>
+          <h3>Contact Us</h3>
+          <div className={styles.contactLinks}>
+            <a href="mailto:avinashrohankar123@gmail.com" className={styles.contactLink}>
+              <EmailLogo /> Email Us
+            </a>
+            <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+              <LinkedInLogo /> LinkedIn
+            </a>
+            <a href="https://t.me/PharmaTalentHubCareer" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+              <TelegramLogo /> Telegram
+            </a>
+            <a href="https://whatsapp.com/channel/0029VaxIS2WGZNCt64tx5b3F" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+              <WhatsAppLogo /> Whatsapp
+            </a>
+          </div>
+        </footer>
+      </div>
+      <Footer />
     </div>
   );
 };
@@ -75,7 +76,7 @@ const LinkedInLogo = () => (
 );
 
 const TelegramLogo = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 48 48" id="telegram">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 48 48" id="telegram">
     <rect width="48" height="48" fill="#419FD9" rx="24"></rect>
     <rect width="48" height="48" fill="url(#paint0_linear)" rx="24"></rect>
     <path fill="#fff" d="M10.7874 23.4709C17.7667 20.3663 22.4206 18.3195 24.7493 17.3305C31.3979 14.507 32.7795 14.0165 33.68 14.0002C33.878 13.9968 34.3208 14.0469 34.6077 14.2845C34.8499 14.4852 34.9165 14.7563 34.9484 14.9465C34.9803 15.1368 35.02 15.5702 34.9884 15.9088C34.6281 19.774 33.0692 29.1539 32.276 33.483C31.9404 35.3148 31.2796 35.929 30.6399 35.9891C29.2496 36.1197 28.1938 35.051 26.8473 34.1497C24.7401 32.7395 23.5498 31.8615 21.5044 30.4854C19.1407 28.895 20.673 28.0209 22.0201 26.5923C22.3726 26.2185 28.4983 20.5295 28.6169 20.0135C28.6317 19.9489 28.6455 19.7083 28.5055 19.5813C28.3655 19.4543 28.1589 19.4977 28.0098 19.5322C27.7985 19.5812 24.4323 21.8529 17.9113 26.3473C16.9558 27.0172 16.0904 27.3435 15.315 27.3264C14.4602 27.3076 12.8159 26.833 11.5935 26.4273C10.0942 25.9296 8.90254 25.6666 9.0063 24.8215C9.06035 24.3813 9.65403 23.9311 10.7874 23.4709Z"></path>
@@ -86,24 +87,24 @@ const TelegramLogo = () => (
       </linearGradient>
     </defs>
   </svg>
-  
+
 );
 
 const WhatsAppLogo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 258">
     <defs>
       <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
-        <stop offset="0%" stop-color="#1faf38"/>
-        <stop offset="100%" stop-color="#60d669"/>
+        <stop offset="0%" stop-color="#1faf38" />
+        <stop offset="100%" stop-color="#60d669" />
       </linearGradient>
       <linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
-        <stop offset="0%" stop-color="#f9f9f9"/>
-        <stop offset="100%" stop-color="#fff"/>
+        <stop offset="0%" stop-color="#f9f9f9" />
+        <stop offset="100%" stop-color="#fff" />
       </linearGradient>
     </defs>
-    <path fill="url(#logosWhatsappIcon0)" d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/>
-    <path fill="url(#logosWhatsappIcon1)" d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/>
-    <path fill="#fff" d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/>
+    <path fill="url(#logosWhatsappIcon0)" d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004" />
+    <path fill="url(#logosWhatsappIcon1)" d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z" />
+    <path fill="#fff" d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64" />
   </svg>
 );
 

@@ -3,7 +3,7 @@ import styles from '../styles/jobCard.module.css';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-const JobCard = ({ id, image, date, company, title, experience, payment,positionName }) => {
+const JobCard = ({ id, image, date, company, title, experience, payment, positionName }) => {
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const options = {
@@ -25,11 +25,17 @@ const JobCard = ({ id, image, date, company, title, experience, payment,position
     };
     function createSlug(position, company) {
         return `${position}-${company}`.toLowerCase().replace(/\s+/g, '-');
-      }
+    }
     return (
         <div className={styles.jobCard} onClick={handleViewDetails}>
-            {/* <img  /> */}
-            <Image src={image} alt="Job Image" className={styles.jobCardImage}  width={500} height={500} />
+            <Image
+                src={image}
+                alt={`${company} hiring for ${positionName} - Pharma job opportunity in pharmaceutical industry`}
+                className={styles.jobCardImage}
+                width={500}
+                height={500}
+                loading="lazy"
+            />
             <div className={styles.jobCardContent}>
                 <h2 className={styles.jobCardTitle}>{title}</h2>
                 <p className={styles.jobCardDate}>Posted on: {formatDate(date)}</p>
