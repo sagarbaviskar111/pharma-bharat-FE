@@ -1,13 +1,88 @@
 module.exports = {
   reactStrictMode: true,
+
+  // Image optimization
   images: {
-    domains: ['res.cloudinary.com'], // Add the Cloudinary domain here
+    domains: ['res.cloudinary.com'],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
+
+  // Compression
+  compress: true,
+
+  // Generate ETags for pages
+  generateEtags: true,
+
+  // Power by header
+  poweredByHeader: false,
+
+  // Trailing slash
+  trailingSlash: false,
+
+  // API proxy
   async rewrites() {
     return [
       {
-        source: '/api/:path*',  // Proxy all requests starting with /api
-        destination: 'http://localhost:5000/:path*', // Proxy to your backend API server
+        source: '/api/:path*',
+        destination: 'http://localhost:5000/:path*',
+      },
+    ];
+  },
+
+  // Security and SEO headers
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
+          },
+        ],
+      },
+    ];
+  },
+
+  // Redirects for clean URLs
+  async redirects() {
+    return [
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
       },
     ];
   },
