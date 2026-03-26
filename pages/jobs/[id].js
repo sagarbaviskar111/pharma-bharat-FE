@@ -65,6 +65,16 @@ const JobDetails = () => {
         }
     ];
 
+    // Push dynamic interview questions to FAQ schema to improve SEO
+    if (job.commonInterviewQuestions && job.commonInterviewQuestions.length > 0) {
+        job.commonInterviewQuestions.forEach(q => {
+            jobFAQs.push({
+                question: q.question,
+                answer: q.answer
+            });
+        });
+    }
+
     return (
         <div>
             <SEO

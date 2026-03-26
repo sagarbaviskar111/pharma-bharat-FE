@@ -123,6 +123,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/jobDetails.module.css';
 import CONFIG from '../config';
 import Image from 'next/image';
+import InlineEventBanner from './InlineEventBanner';
 
 const API_URL = CONFIG.BACKEND_URL; // Use environment variable for API URL
 
@@ -255,6 +256,9 @@ const JobDetails = ({ job }) => {
         </amp-ad>
       </div>
 
+      {/* Dynamic Inline Event Banner */}
+      <InlineEventBanner />
+
       <div className={styles.jobFooter}>
         <h2>Apply For Job</h2>
         <div className={styles.applicationLinks}>
@@ -263,6 +267,23 @@ const JobDetails = ({ job }) => {
           </a>
         </div>
       </div>
+
+      {job?.commonInterviewQuestions && job.commonInterviewQuestions.length > 0 && (
+        <div className={styles.interviewQuestions}>
+          <h2>Common Interview Questions for {job.positionName}</h2>
+          <p>Prepare for your interview by reviewing these frequently asked questions. Click on a question to reveal the answer.</p>
+          <div className={styles.accordionContainer}>
+            {job.commonInterviewQuestions.map((qa, index) => (
+              <details key={index} className={styles.faqDetails}>
+                <summary className={styles.faqSummary}>{qa.question}</summary>
+                <div className={styles.faqAnswer}>
+                  <p>{qa.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

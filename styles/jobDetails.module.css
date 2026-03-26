@@ -186,3 +186,79 @@
     text-align: center;
   }
 }
+
+/* Interview Questions Accordion */
+.interviewQuestions {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f0fdf4;
+  border-radius: 10px;
+  border: 1px solid #bbf7d0;
+}
+
+.interviewQuestions h2 {
+  font-size: 1.5rem;
+  color: #166534;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #22c55e;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.accordionContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqDetails {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faqDetails[open] {
+  border-color: #22c55e;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.faqSummary {
+  padding: 15px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f9fafb;
+  color: #1f2937;
+  list-style: none; /* Hide default triangle */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.faqSummary::-webkit-details-marker {
+  display: none; /* Hide default triangle in Safari */
+}
+
+.faqSummary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: #22c55e;
+  transition: transform 0.3s;
+}
+
+.faqDetails[open] .faqSummary::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 15px 20px;
+  border-top: 1px solid #e5e7eb;
+  background-color: white;
+  color: #4b5563;
+  line-height: 1.6;
+}

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import SEOConfig from '../next-seo.config';
 import { OrganizationSchema } from '../components/SEO';
+import EventBannerPopup from '../components/EventBannerPopup';
 import '../styles/globals.css';
 import '../utils/fontAwesome';
 
@@ -56,6 +57,7 @@ function MyApp({ Component, pageProps }) {
       <OrganizationSchema />
 
       <Component {...pageProps} />
+      <EventBannerPopup />
     </>
   );
 }
