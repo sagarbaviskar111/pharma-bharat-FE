@@ -130,6 +130,8 @@ const API_URL = CONFIG.BACKEND_URL; // Use environment variable for API URL
 const JobDetails = ({ job }) => {
   const [latestJobs, setLatestJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showApplyPopup, setShowApplyPopup] = useState(false);
+  const [applyCountdown, setApplyCountdown] = useState(0);
 
   const departmentId = job?.department; // Get departmentId from job prop
 
@@ -162,6 +164,22 @@ const JobDetails = ({ job }) => {
       fetchLatestJobs(); // Only fetch if departmentId exists
     }
   }, [departmentId]);
+
+  useEffect(() => {
+    let timer;
+    if (showApplyPopup && applyCountdown > 0) {
+      timer = setInterval(() => {
+        setApplyCountdown((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [showApplyPopup, applyCountdown]);
+
+  const handleApplyClick = (e) => {
+    e.preventDefault();
+    setShowApplyPopup(true);
+    setApplyCountdown(20);
+  };
 
   return (
     <div className={styles.jobCard}>
@@ -262,7 +280,7 @@ const JobDetails = ({ job }) => {
       <div className={styles.jobFooter}>
         <h2>Apply For Job</h2>
         <div className={styles.applicationLinks}>
-          <a href={job?.applylink} target="_blank" rel="noopener noreferrer">
+          <a href={job?.applylink} target="_blank" rel="noopener noreferrer" onClick={handleApplyClick}>
             Apply Here
           </a>
         </div>
@@ -281,6 +299,38 @@ const JobDetails = ({ job }) => {
                 </div>
               </details>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Apply Popup */}
+      {showApplyPopup && (
+        <div className={styles.popupOverlay}>
+          <div className={styles.applyPopup}>
+            <h3>Join Our Communities</h3>
+            <p>Please stay connected with us on our official channels to catch the latest updates before proceeding.</p>
+            <div className={styles.socialButtons}>
+              <a href="https://whatsapp.com/channel/0029VaxIS2WGZNCt64tx5b3F" target="_blank" rel="noopener noreferrer" className={styles.whatsappBtn}>
+                <i className="fa-brands fa-whatsapp"></i> Join WhatsApp
+              </a>
+              <a href="https://t.me/PharmaTalentHubCareer" target="_blank" rel="noopener noreferrer" className={styles.telegramBtn}>
+                <i className="fa-brands fa-telegram"></i> Join Telegram
+              </a>
+              <a href="https://www.linkedin.com/company/pharmatalenthub/" target="_blank" rel="noopener noreferrer" className={styles.linkedinBtn}>
+                <i className="fa-brands fa-linkedin"></i> Follow LinkedIn
+              </a>
+            </div>
+            <div className={styles.applyPopupFooter}>
+              {applyCountdown > 0 ? (
+                <button className={styles.disabledProceedBtn} disabled>
+                  Wait ({applyCountdown}s)
+                </button>
+              ) : (
+                <a href={job?.applylink} target="_blank" rel="noopener noreferrer" className={styles.proceedBtn} onClick={() => setShowApplyPopup(false)}>
+                  Proceed to Apply
+                </a>
+              )}
+            </div>
           </div>
         </div>
       )}

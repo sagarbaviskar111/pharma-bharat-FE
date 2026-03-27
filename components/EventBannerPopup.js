@@ -5,6 +5,7 @@ import styles from '../styles/EventBannerPopup.module.css';
 const EventBannerPopup = () => {
   const [data, setData] = useState(null);
   const [show, setShow] = useState(false);
+  const [countdown, setCountdown] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,6 +43,22 @@ const EventBannerPopup = () => {
     };
   }, [data]);
 
+  useEffect(() => {
+    if (show) {
+      setCountdown(15);
+    }
+  }, [show]);
+
+  useEffect(() => {
+    let timer;
+    if (show && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [show, countdown]);
+
   const closePopup = () => setShow(false);
 
   if (!show || !data) return null;
@@ -49,7 +66,14 @@ const EventBannerPopup = () => {
   return (
     <div className={styles.overlay}>
       <div className={styles.popup}>
-        <button className={styles.closeBtn} onClick={closePopup}>&times;</button>
+        <button 
+          className={styles.closeBtn} 
+          onClick={closePopup} 
+          disabled={countdown > 0}
+          title={countdown > 0 ? `Wait ${countdown} seconds to close` : "Close"}
+        >
+          {countdown > 0 ? countdown : "\u00D7"}
+        </button>
         {(data.imageUrl || data.image) && (
           <div className={styles.imageContainer}>
              <img 
